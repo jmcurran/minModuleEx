@@ -1,0 +1,14 @@
+Package: minModuleEx
+Type: Package
+Title: A Minimum Example of an Rcpp Module
+Version: 0.1.0
+Author: James M. Curran
+Maintainer: James M. Curran <j.curran@auckland.ac.nz>
+Description: This package provides a minimal example for using an Rcpp pacakge. 
+License: GPL (>=2)
+Encoding: UTF-8
+LazyData: true
+Depends: Rcpp (>= 0.12.8)
+Imports: Rcpp (>= 0.12.8)
+LinkingTo: Rcpp
+RcppModules: MyClass
