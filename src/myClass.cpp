@@ -44,9 +44,26 @@ public:
   }
 };
 
-// Expose the class
-// I prefer to give the module the same name as the class
-RCPP_MODULE(MyClass) {
+class AnotherClass{
+private:
+  int x;
+
+public:
+  AnotherClass(){
+    x = 0;
+  }
+
+  AnotherClass(int y){
+    x = y;
+  }
+
+  void print(void){
+    Rprintf("%d\n", x);
+  }
+};
+
+// Expose the classes
+RCPP_MODULE(MyModule) {
   using namespace Rcpp;
 
   class_<MyClass>( "MyClass")
@@ -54,6 +71,12 @@ RCPP_MODULE(MyClass) {
     .constructor<NumericVector>("Constructor with an argument") // This exposes the other constructor
     .method("print", &MyClass::print) // This exposes the print method
     .property("Bender", &MyClass::getBender, &MyClass::setBender) // and this shows how we set up a property
+  ;
+
+  class_<AnotherClass>("AnotherClass")
+    .default_constructor("Default constructor")
+    .constructor<int>("Constructor with an argument")
+    .method("print", &AnotherClass::print)
   ;
 }
 

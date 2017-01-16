@@ -11,4 +11,4 @@ LazyData: true
 Depends: Rcpp (>= 0.12.8)
 Imports: Rcpp (>= 0.12.8)
 LinkingTo: Rcpp
-RcppModules: MyClass
+RcppModules: MyModule
