@@ -1,6 +1,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+//' @export MyClass
 class MyClass{
   // internal variables
 private:
@@ -44,6 +45,7 @@ public:
   }
 };
 
+//' @export AnotherClass
 class AnotherClass{
 private:
   int x;
