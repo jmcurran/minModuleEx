@@ -4,3 +4,6 @@
 #' @export MyClass
 NULL
 
+#' @export AnotherClass
+NULL
+
